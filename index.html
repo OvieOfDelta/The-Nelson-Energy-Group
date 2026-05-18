@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Nelson Energy Group - Powering Nigeria's Future</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <!-- Logo Icon SVG -->
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="headerGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#F4E5C2;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C49A2F;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <g transform="translate(50, 50)">
+                        <path d="M 0,-35 L 30,-17.5 L 30,17.5 L 0,35 L -30,17.5 L -30,-17.5 Z" 
+                              fill="#0A2463" 
+                              stroke="url(#headerGoldGrad)" 
+                              stroke-width="2"/>
+                        <path d="M 0,-28 L 24,-14 L 24,14 L 0,28 L -24,14 L -24,-14 Z" 
+                              fill="none" 
+                              stroke="#D4AF37" 
+                              stroke-width="1"/>
+                        <path d="M -5,-20 L 1,-6 L -3,-6 L 5,9 L -1,-3 L 3,-3 Z" fill="#D4AF37"/>
+                        <g transform="translate(0, 15)">
+                            <circle cx="0" cy="0" r="7" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+                            <circle cx="0" cy="0" r="3" fill="#D4AF37"/>
+                            <rect x="-1.5" y="-10" width="3" height="5" fill="#D4AF37"/>
+                            <rect x="-1.5" y="5" width="3" height="5" fill="#D4AF37"/>
+                            <rect x="5" y="-1.5" width="5" height="3" fill="#D4AF37"/>
+                            <rect x="-10" y="-1.5" width="5" height="3" fill="#D4AF37"/>
+                        </g>
+                    </g>
+                </svg>
+                
+                <div class="logo-text">
+                    <div class="main-logo">THE NELSON ENERGY GROUP</div>
+                    <div class="parent-tagline">Industrial Ventures & Innovation</div>
+                </div>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                    <li><a href="#ventures" onclick="closeMenu()">Our Ventures</a></li>
+                    <li><a href="#about" onclick="closeMenu()">About</a></li>
+                    <li><a href="#hse" onclick="closeMenu()">HSE</a></li>
+                    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Building Nigeria's<br>Industrial Future</h1>
+            <p class="subtitle">A Diversified Investment Group</p>
+            <p class="hero-description">From Energy Logistics to Health Technology</p>
+            <p>The Ishegbe Nelson Group operates across multiple sectors with a unified commitment to operational excellence, innovation, and service delivery. Our ventures span energy distribution, retail power solutions, and cutting-edge medical diagnostics.</p>
+            <div class="cta-buttons">
+                <a href="#ventures" class="btn btn-primary">Explore Our Ventures</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventures Section - House of Brands -->
+    <section class="ventures" id="ventures">
+        <div class="container">
+            <h2 class="section-title">Our Industrial Ventures</h2>
+            <p style="text-align: center; font-size: 1.15rem; margin-bottom: 2rem; opacity: 0.9;">Three pillars of excellence across energy and healthcare</p>
+            
+            <!-- Innovation Bridge Statement -->
+            <div class="innovation-bridge">
+                <p>Driven by a commitment to operational excellence, <strong>The Ishegbe Nelson Group</strong> is expanding beyond traditional energy into transformative sectors. Following our successful presentation at the recent Medical Laboratory Science Symposium, we are proud to introduce <strong>MedLabSolve</strong>our flagship medical diagnostic platform designed to bring the same precision we apply to energy logistics to the world of clinical science.</p>
+            </div>
+
+            <div class="ventures-grid">
+                <!-- Nelson Integrated - Energy Logistics -->
+                <div class="venture-card energy">
+                    <div class="venture-icon">🛢️</div>
+                    <h3>Nelson Integrated</h3>
+                    <p class="venture-tagline">Energy Logistics</p>
+                    <p>Premium AGO (diesel) logistics and bulk fuel delivery for industrial clients. Fleet-based operations serving corporate offices, manufacturing plants, and heavy-duty logistics firms across Nigeria.</p>
+                    <a href="#divisions" class="btn">Learn More</a>
+                </div>
+
+                <!-- Sheen Colour - Retail Power -->
+                <div class="venture-card energy">
+                    <div class="venture-icon">🔥</div>
+                    <h3>Sheen Colour</h3>
+                    <p class="venture-tagline">Retail Power</p>
+                    <p>Clean energy and LPG retail solutions for homes and small businesses. Safe cylinder refilling services with certified safety standards and convenient walk-in retail access.</p>
+                    <a href="#locator" class="btn">Find Station</a>
+                </div>
+
+                <!-- MedLabSolve - Health-Tech & Diagnostics -->
+                <div class="venture-card medlab">
+                    <div class="venture-icon">🔬</div>
+                    <h3>MedLabSolve</h3>
+                    <p class="venture-tagline">Health-Tech & Diagnostics</p>
+                    <p>Pioneering digital laboratory diagnostics. A comprehensive web-based platform revolutionizing medical laboratory management, result delivery, and clinical data integration across Nigeria's healthcare sector.</p>
+                    <a href="https://medlabsolve.com" target="_blank" class="btn btn-special">Visit Platform →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symposium Section - Social Proof -->
+    <section class="symposium">
+        <div class="symposium-content">
+            <div class="symposium-image">
+                <div class="carousel-container">
+                    <div class="carousel-slides">
+                        <!-- Slide 1 -->
+                        <div class="carousel-slide active">
+                            <img src="wwer (72).JPG" alt="Symposium presentation slide 1">
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="carousel-slide">
+                            <img src="wwer (25).JPG" alt="Symposium presentation slide 2">
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="carousel-slide">
+                            <img src="wwer (76).JPG" alt="Symposium presentation slide 3">
+                        </div>
+                        
+                        <!-- Slide 4 -->
+                        <div class="carousel-slide">
+                            <img src="wwer (74).JPG" alt="Symposium presentation slide 4">
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button class="carousel-arrow prev" onclick="changeSlide(-1)" aria-label="Previous slide">‹</button>
+                    <button class="carousel-arrow next" onclick="changeSlide(1)" aria-label="Next slide">›</button>
+                    
+                    <!-- Dots Navigation -->
+                    <div class="carousel-dots">
+                        <span class="carousel-dot active" onclick="goToSlide(0)"></span>
+                        <span class="carousel-dot" onclick="goToSlide(1)"></span>
+                        <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                        <span class="carousel-dot" onclick="goToSlide(3)"></span>
+                    </div>
+                </div>
+                <div class="symposium-badge">🔬 Technical Demo</div>
+            </div>
+            <div class="symposium-text">
+                <h2>From Energy to <span class="highlight">Healthcare Innovation</span></h2>
+                <p>As <strong>Group Representative and Technical Service Provider</strong> for The Ishegbe Nelson Group, our leadership team presented <strong>MedLabSolve</strong> at Nigeria's premier Medical Laboratory Science Symposium marking a strategic expansion from energy logistics into digital healthcare.</p>
+                <p>The presentation, delivered on behalf of <strong>Chairman Ishegbe Nelson</strong>, showcased the technical architecture and vision behind MedLabSolve, demonstrating how precision, data integrity, and operational excellence hallmarks of our energy operations are now driving innovation in medical diagnostics and laboratory management.</p>
+                
+                <div class="symposium-details">
+                    <h4>Symposium Highlights:</h4>
+                    <ul>
+                        <li>Technical demonstration of MedLabSolve's integrated diagnostic platform</li>
+                        <li>Live showcase of digital transformation in laboratory medicine</li>
+                        <li>Recognition from healthcare professionals and medical scientists</li>
+                        <li>Validation of cross-industry innovation approach</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 1.5rem; font-style: italic; color: var(--charcoal);">"Building MedLabSolve required the same engineering rigor we apply to fuel logistics precision, reliability and real-time data integrity. Excellence transcends industries."</p>
+                <p style="text-align: right; font-weight: 700; color: var(--navy);">— Group Representative & Technical Lead</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Energy Operations Section -->
+    <section class="divisions" id="divisions">
+        <div class="container">
+            <h2 class="section-title">Energy Operations</h2>
+            <p class="section-subtitle">Integrated fuel logistics and retail solutions across Nigeria</p>
+            
+            <!-- Photo Gallery -->
+            <div class="photo-gallery">
+                <h3 style="text-align: center; color: var(--navy); margin-bottom: 2rem; font-size: 1.6rem; font-weight: 700;">See Our Operations in Action</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="Truck1.jpg" alt="Diesel Tanker Trucks">
+                        <div class="gallery-caption">Heavy-duty diesel delivery trucks</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sheen1.jpg" alt="Sheen Colour LPG Station">
+                        <div class="gallery-caption">Sheen Colour retail LPG station</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="sheen2.jpg" alt="LPG Dispensing Unit">
+                        <div class="gallery-caption">Safe cylinder refilling operations</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Truck2.jpg" alt="Storage Tanks">
+                        <div class="gallery-caption">Secure fuel storage infrastructure</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="division-cards">
+                <!-- Nelson Integrated -->
+                <div class="division-card">
+                    <div class="division-header">
+                        <div class="division-icon">🛢️</div>
+                        <div>
+                            <h3>Nelson Integrated Oil & Gas</h3>
+                            <p class="tagline">Downstream Logistics Excellence</p>
+                        </div>
+                    </div>
+                    <p><strong>Focus:</strong> Bulk diesel (AGO) delivery and industrial fuel logistics</p>
+                    <ul>
+                        <li>Fleet-based bulk diesel delivery</li>
+                        <li>Industrial plant fuel supply</li>
+                        <li>Corporate offices & logistics firms</li>
+                        <li>Quality assurance & timely delivery</li>
+                        <li>Customized fuel management solutions</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-primary" style="margin-top: 1.5rem;">Request Quote</a>
+                </div>
+
+                <!-- Sheen Colour -->
+                <div class="division-card">
+                    <div class="division-header">
+                        <div class="division-icon">🔥</div>
+                        <div>
+                            <h3>Sheen Colour Integrated Oil & Gas</h3>
+                            <p class="tagline">Retail LPG Distribution</p>
+                        </div>
+                    </div>
+                    <p><strong>Focus:</strong> Cooking gas (LPG) for homes and small businesses</p>
+                    <ul>
+                        <li>Safe cylinder refilling services</li>
+                        <li>Retail station for walk-in customers</li>
+                        <li>Residential & small business supply</li>
+                        <li>Convenient location</li>
+                        <li>Certified safety standards</li>
+                    </ul>
+                    <a href="#locator" class="btn btn-primary" style="margin-top: 1.5rem;">Find Station</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>The Vision of Ishegbe Nelson</h2>
+                    <p>Founded by <strong>Ishegbe Nelson (Chairman/CEO)</strong>, The Ishegbe Nelson Group represents a commitment to building Nigeria's industrial future across multiple high-impact sectors.</p>
+                    <p>What began as energy logistics has evolved into a diversified investment group spanning fuel distribution, retail power solutions, and now healthcare technology. From bulk diesel trucks to medical diagnostic platforms, we bring the same operational rigor and commitment to excellence across every venture.</p>
+                    <p><strong>Our Mission:</strong> To be Nigeria's most trusted multi-sector industrial group, delivering world-class service and innovation across energy, healthcare, and beyond.</p>
+                </div>
+                <div class="values">
+                    <div class="value-card">
+                        <div style="font-size: 3rem;">🛡️</div>
+                        <h4>Integrity</h4>
+                        <p>Honest dealings across all ventures</p>
+                    </div>
+                    <div class="value-card">
+                        <div style="font-size: 3rem;">💡</div>
+                        <h4>Innovation</h4>
+                        <p>Expanding into transformative sectors</p>
+                    </div>
+                    <div class="value-card">
+                        <div style="font-size: 3rem;">⚡</div>
+                        <h4>Excellence</h4>
+                        <p>Precision in every operation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HSE Section -->
+    <section class="hse" id="hse">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--gold);">Health, Safety & Environment</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.15rem;">
+                Our HSE commitment is non-negotiable. We comply with all Nigerian Oil & Gas regulations and international safety standards.
+            </p>
+            <div class="hse-grid">
+                <div class="hse-card">
+                    <h4>🏭 Industry Compliance</h4>
+                    <p>Full adherence to DPR (Department of Petroleum Resources) regulations and NUPRC standards</p>
+                </div>
+                <div class="hse-card">
+                    <h4>👷 Staff Training</h4>
+                    <p>Continuous HSE training programs for all field personnel and drivers</p>
+                </div>
+                <div class="hse-card">
+                    <h4>🚛 Fleet Safety</h4>
+                    <p>GPS-tracked vehicles, certified drivers, and regular maintenance protocols</p>
+                </div>
+                <div class="hse-card">
+                    <h4>🔥 Fire Prevention</h4>
+                    <p>Advanced fire suppression systems at all LPG stations and storage facilities</p>
+                </div>
+                <div class="hse-card">
+                    <h4>🌍 Environmental Care</h4>
+                    <p>Waste management, spill prevention, and eco-friendly operations</p>
+                </div>
+                <div class="hse-card">
+                    <h4>📋 Quality Assurance</h4>
+                    <p>Regular audits, quality checks, and third-party certifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Station Locator -->
+    <section class="locator" id="locator">
+        <div class="container">
+            <h2 class="section-title">Our LPG Station Location</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">Visit our Sheen Colour LPG retail station</p>
+            <div class="locator-interface">
+                <div class="station-item">
+                    <h4>🔥 Sheen Colour Integrated Oil & Gas Ltd</h4>
+                    <p><strong>📍 Address:</strong> [Your Actual Station Address Here]</p>
+                    <p><strong>📞 Phone:</strong> +234 803 354 5934</p>
+                    <p><strong>✉️ Email:</strong> sheencolour@nelsonenergygroup.com</p>
+                    <p><strong>🕒 Operating Hours:</strong></p>
+                    <p style="margin-left: 1.5rem;">Monday - Saturday: 7:00 AM - 7:00 PM</p>
+                    <p style="margin-left: 1.5rem;">Sunday: 8:00 AM - 5:00 PM</p>
+                    <p style="margin-top: 1.5rem;"><strong>Services:</strong></p>
+                    <ul style="margin-left: 2rem; margin-top: 0.8rem;">
+                        <li>LPG Cylinder Refilling (All Sizes)</li>
+                        <li>Walk-in Retail Service</li>
+                        <li>Certified Safety Standards</li>
+                        <li>Quality Assured Cooking Gas</li>
+                    </ul>
+                </div>
+                <p style="text-align: center; margin-top: 2.5rem; color: var(--charcoal); font-weight: 600;">
+                    For bulk diesel delivery inquiries, please use the contact form below or call Nelson Integrated directly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking/Contact Section -->
+    <section class="booking" id="booking">
+        <div class="container" id="contact">
+            <h2 class="section-title">Request a Quote or Contact Us</h2>
+            <p class="section-subtitle">Get in touch with our team for all your energy needs</p>
+            <div class="booking-form">
+                <div class="success-message" id="successMessage">
+                    ✅ Thank you! Your request has been submitted. Our team will contact you within 24 hours.
+                </div>
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label>Service Required *</label>
+                        <select name="service" required>
+                            <option value="">-- Select Service --</option>
+                            <option value="bulk-diesel">Bulk Diesel Delivery (Nelson Integrated)</option>
+                            <option value="lpg">LPG Refill (Sheen Colour)</option>
+                            <option value="partnership">Partnership Inquiry</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Company/Organization</label>
+                        <input type="text" name="company">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Location/Delivery Address</label>
+                        <input type="text" name="location">
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Details</label>
+                        <textarea name="details" placeholder="Quantity needed, delivery date, or any special requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>The Ishegbe Nelson Group</h4>
+                <p>A diversified industrial investment group</p>
+                <p style="margin-top: 1rem;"><strong>Chairman/CEO:</strong> Ishegbe Nelson</p>
+            </div>
+            <div class="footer-section">
+                <h4>Our Ventures</h4>
+                <p>🛢️ Nelson Integrated Oil & Gas</p>
+                <p>🔥 Sheen Colour Oil & Gas</p>
+                <p>🔬 MedLabSolve (Health-Tech)</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="#ventures">Our Ventures</a></p>
+                <p><a href="#hse">HSE Policy</a></p>
+                <p><a href="#contact">Contact Us</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@ishegbenelsongroup.com</p>
+                <p>📞 +234 803 354 5934</p>
+                <p>📍 Lagos, Nigeria</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 The Ishegbe Nelson Group. All rights reserved. | Building Nigeria's Industrial Future</p>
+        </div>
+    </footer>
+  
+   <script src="script.js"></script>
+</body>
+</html>
