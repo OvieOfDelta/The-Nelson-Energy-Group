@@ -126,7 +126,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(to right, rgba(10, 36, 99, 0.88) 0%, rgba(10, 36, 99, 0.75) 50%, rgba(44, 62, 80, 0.7) 100%),
-                        url('industry.jpg') center/cover no-repeat fixed;
+                        url('industry.jpg') center/cover no-repeat scroll;
             color: var(--white);
             padding: 6rem 1.5rem 5rem;
             position: relative;
