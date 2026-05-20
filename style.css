@@ -973,6 +973,8 @@
         .station-item p {
             margin: 0.6rem 0;
             line-height: 1.7;
+            word-break: break-all;
+            overflow-wrap: anywhere;
         }
 
         .station-item ul {

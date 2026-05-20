@@ -90,7 +90,7 @@
                     <div class="venture-icon">🛢️</div>
                     <h3>Nelson Integrated</h3>
                     <p class="venture-tagline">Energy Logistics</p>
-                    <p>Premium AGO (diesel) logistics and bulk fuel delivery for industrial clients. Fleet-based operations serving corporate offices, manufacturing plants, and heavy-duty logistics firms across Nigeria.</p>
+                    <p>Premium AGO (diesel) logistics and bulk fuel delivery for industrial clients. Fleet-based operations serving corporate offices, manufacturing plants, and heavy-duty logistics firms across Lagos State.</p>
                     <a href="#divisions" class="btn">Learn More</a>
                 </div>
 
@@ -123,7 +123,7 @@
                     <div class="carousel-slides">
                         <!-- Slide 1 -->
                         <div class="carousel-slide active">
-                            <img src="wwer (72).JPG" alt="Symposium presentation slide 1">
+                            <img src="symposium2.jpg" alt="Symposium presentation slide 1">
                         </div>
                         
                         <!-- Slide 2 -->
@@ -138,7 +138,7 @@
                         
                         <!-- Slide 4 -->
                         <div class="carousel-slide">
-                            <img src="wwer (74).JPG" alt="Symposium presentation slide 4" loading="lazy">
+                            <img src="symposium1.jpg" alt="Symposium presentation slide 4" loading="lazy">
                         </div>
                     </div>
                     
@@ -299,7 +299,7 @@
                 </div>
                 <div class="hse-card">
                     <h4>🚛 Fleet Safety</h4>
-                    <p>GPS-tracked vehicles, certified drivers, and regular maintenance protocols</p>
+                    <p>Call-tracked vehicles, certified drivers, and regular maintenance protocols</p>
                 </div>
                 <div class="hse-card">
                     <h4>🔥 Fire Prevention</h4>
@@ -325,12 +325,12 @@
             <div class="locator-interface">
                 <div class="station-item">
                     <h4>🔥 Sheen Colour Integrated Oil & Gas Ltd</h4>
-                    <p><strong>📍 Address:</strong> [Your Actual Station Address Here]</p>
+                    <p><strong>📍 Address:</strong> No.17 Benster Crescent, Alahun Osumba, Lagos State. </p>
                     <p><strong>📞 Phone:</strong> +234 803 354 5934</p>
                     <p><strong>✉️ Email:</strong> sheencolour@nelsonenergygroup.com</p>
                     <p><strong>🕒 Operating Hours:</strong></p>
-                    <p style="margin-left: 1.5rem;">Monday - Saturday: 7:00 AM - 7:00 PM</p>
-                    <p style="margin-left: 1.5rem;">Sunday: 8:00 AM - 5:00 PM</p>
+                    <p style="margin-left: 1.5rem;">Monday - Saturday: 8:00 AM - 9:00 PM</p>
+                    <p style="margin-left: 1.5rem;">Sunday: 12:00 AM - 7:00 PM</p>
                     <p style="margin-top: 1.5rem;"><strong>Services:</strong></p>
                     <ul style="margin-left: 2rem; margin-top: 0.8rem;">
                         <li>LPG Cylinder Refilling (All Sizes)</li>
@@ -420,7 +420,7 @@
                 <h4>Contact</h4>
                 <p>📧 info@ishegbenelsongroup.com</p>
                 <p>📞 +234 803 354 5934</p>
-                <p>📍 Lagos, Nigeria</p>
+                <p>📍 337/339 Old Ojo Road Alakija Bus-stop, Lagos State.</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -428,6 +428,45 @@
         </div>
     </footer>
   
+   <!-- Newsletter Popup -->
+    <div class="newsletter-overlay" id="newsletterOverlay" onclick="closeNewsletterOnOverlay(event)">
+        <div class="newsletter-popup" id="newsletterPopup">
+            <button class="newsletter-close" onclick="closeNewsletter()" aria-label="Close newsletter popup">&times;</button>
+            <div class="newsletter-icon">⚡</div>
+            <h3>Stay Ahead of the Curve</h3>
+            <p>Get the latest updates from <strong>The Nelson Energy Group</strong> — industry insights, new ventures, energy news, and exclusive announcements delivered to your inbox.</p>
+            <form id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
+                <div class="newsletter-input-group">
+                    <input 
+                        type="text" 
+                        id="newsletterName" 
+                        placeholder="Your first name" 
+                        required
+                        autocomplete="given-name"
+                    >
+                    <input 
+                        type="email" 
+                        id="newsletterEmail" 
+                        placeholder="Your email address" 
+                        required
+                        autocomplete="email"
+                    >
+                    <button type="submit" class="newsletter-btn" id="newsletterSubmitBtn">
+                        <span id="newsletterBtnText">Subscribe Now</span>
+                        <span id="newsletterBtnLoader" style="display:none;">Subscribing...</span>
+                    </button>
+                </div>
+                <div class="newsletter-success" id="newsletterSuccess" style="display:none;">
+                    ✅ You're in! Welcome to the Nelson Energy Group community.
+                </div>
+                <div class="newsletter-error" id="newsletterError" style="display:none;">
+                    ❌ Something went wrong. Please try again or contact us directly.
+                </div>
+            </form>
+            <p class="newsletter-privacy">🔒 We respect your privacy. No spam, ever. Unsubscribe anytime.</p>
+        </div>
+    </div>
+
    <script src="script.js"></script>
 </body>
 </html>
