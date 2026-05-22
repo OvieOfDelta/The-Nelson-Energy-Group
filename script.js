@@ -30,34 +30,12 @@
             });
         });
 
-        // Form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Reset form
-            document.getElementById('contactForm').reset();
-            
-            // Scroll to success message
-            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 5000);
-            
-            return false;
-        }
-
         // Carousel functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.carousel-dot');
 
         function showSlide(index) {
-            // Wrap around if out of bounds
             if (index >= slides.length) {
                 currentSlide = 0;
             } else if (index < 0) {
@@ -66,17 +44,9 @@
                 currentSlide = index;
             }
 
-            // Hide all slides
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-            });
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
 
-            // Remove active from all dots
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-            });
-
-            // Show current slide
             slides[currentSlide].classList.add('active');
             dots[currentSlide].classList.add('active');
         }
@@ -100,7 +70,6 @@
             carouselContainer.addEventListener('mouseenter', () => {
                 clearInterval(autoSlideInterval);
             });
-
             carouselContainer.addEventListener('mouseleave', () => {
                 autoSlideInterval = setInterval(() => {
                     changeSlide(1);
@@ -108,11 +77,55 @@
             });
         }
 
-        // ── Newsletter Popup ──────────────────────────────────────────
-        // ⚙️  Replace these two values with your real Brevo credentials:
-        const BREVO_API_KEY  = 'YOUR_BREVO_API_KEY_HERE';  // from Brevo → Account → API Keys
-        const BREVO_LIST_ID  = 0;                           // your Brevo list ID (integer)
+        // ── Backend URL (used for newsletter only) ────────────────────────────────
+        // After deploying to Render/Railway, replace this with your live backend URL
+        // Example: 'https://nelson-energy-api.onrender.com'
+        const BACKEND_URL = 'https://nelson-energy-backend.onrender.com';
 
+
+        // ── Contact / Booking Form (via Formspree) ────────────────────────────────
+        async function handleSubmit(event) {
+            event.preventDefault();
+
+            const form       = document.getElementById('contactForm');
+            const submitBtn  = form.querySelector('button[type="submit"]');
+            const successMsg = document.getElementById('successMessage');
+
+            submitBtn.disabled    = true;
+            submitBtn.textContent = 'Sending...';
+            successMsg.style.display = 'none';
+
+            try {
+                const response = await fetch('https://formspree.io/f/xeedarnv', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(form),   // sends all named fields automatically
+                });
+
+                if (response.ok) {
+                    successMsg.style.display = 'block';
+                    form.reset();
+                    successMsg.scrollIntoView({ behavior: 'smooth' });
+                    setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
+                } else {
+                    const result = await response.json();
+                    const msg = result.errors
+                        ? result.errors.map(e => e.message).join(', ')
+                        : 'Something went wrong. Please try again.';
+                    alert(msg);
+                }
+            } catch (err) {
+                alert('Network error. Please check your connection and try again.');
+            } finally {
+                submitBtn.disabled    = false;
+                submitBtn.textContent = 'Submit Request';
+            }
+
+            return false;
+        }
+
+
+        // ── Newsletter Popup ──────────────────────────────────────────────────────
         function openNewsletter() {
             document.getElementById('newsletterOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -121,7 +134,6 @@
         function closeNewsletter() {
             document.getElementById('newsletterOverlay').classList.remove('active');
             document.body.style.overflow = '';
-            // Remember the user dismissed it — don't show again this session
             sessionStorage.setItem('newsletterDismissed', 'true');
         }
 
@@ -135,7 +147,6 @@
         window.addEventListener('load', function () {
             const alreadySubscribed = localStorage.getItem('newsletterSubscribed');
             const dismissed         = sessionStorage.getItem('newsletterDismissed');
-
             if (!alreadySubscribed && !dismissed) {
                 setTimeout(openNewsletter, 5000);
             }
@@ -157,62 +168,43 @@
             const success   = document.getElementById('newsletterSuccess');
             const error     = document.getElementById('newsletterError');
 
-            // Reset messages
             success.style.display = 'none';
             error.style.display   = 'none';
 
-            // Loading state
-            btn.disabled        = true;
-            btnText.style.display  = 'none';
+            btn.disabled            = true;
+            btnText.style.display   = 'none';
             btnLoader.style.display = 'inline';
 
             try {
-                const response = await fetch('https://api.brevo.com/v3/contacts', {
+                const response = await fetch(`${BACKEND_URL}/api/newsletter`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'api-key': BREVO_API_KEY
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        attributes: { FIRSTNAME: name },
-                        listIds: [BREVO_LIST_ID],
-                        updateEnabled: true   // update contact if email already exists
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email }),
                 });
 
-                if (response.ok || response.status === 204) {
-                    // Success
+                const result = await response.json();
+
+                if (response.ok) {
                     success.style.display = 'block';
+                    success.textContent   = result.message === 'already_subscribed'
+                        ? "✅ You're already subscribed — we'll keep you posted!"
+                        : "✅ You're in! Welcome to the Nelson Energy Group community.";
+
                     document.getElementById('newsletterForm').reset();
                     localStorage.setItem('newsletterSubscribed', 'true');
 
-                    // Auto-close popup after 3 seconds
                     setTimeout(() => {
                         document.getElementById('newsletterOverlay').classList.remove('active');
                         document.body.style.overflow = '';
                     }, 3000);
                 } else {
-                    const data = await response.json();
-                    // Brevo returns 400 if contact already exists in the list
-                    if (response.status === 400 && data.code === 'duplicate_parameter') {
-                        success.style.display = 'block';
-                        success.textContent   = '✅ You\'re already subscribed — we\'ll keep you posted!';
-                        localStorage.setItem('newsletterSubscribed', 'true');
-                        setTimeout(() => {
-                            document.getElementById('newsletterOverlay').classList.remove('active');
-                            document.body.style.overflow = '';
-                        }, 3000);
-                    } else {
-                        error.style.display = 'block';
-                    }
+                    error.style.display = 'block';
                 }
             } catch (err) {
                 error.style.display = 'block';
             } finally {
-                btn.disabled           = false;
-                btnText.style.display  = 'inline';
+                btn.disabled            = false;
+                btnText.style.display   = 'inline';
                 btnLoader.style.display = 'none';
             }
         }
-    
